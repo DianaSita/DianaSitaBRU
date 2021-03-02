@@ -1,0 +1,480 @@
+* {
+    background-color:white;
+    color: rgba(0,0,0,0.5);
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.8rem;
+    padding: 0;
+    margin: 0;
+}
+
+::selection {
+    background-color: black;
+    color: white;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.site {
+    box-shadow: 0 0 10px 0 rgba(162, 172, 184, 0.692);
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+}
+
+.navigation {
+    align-items: center;
+    box-shadow: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+.site-logo {
+    color: black;
+    cursor: pointer;
+    font-family: oswald,arial,sans-serif;
+    font-size: 1.6rem;
+    margin: 1em 0;
+}
+
+.site-menu {
+    display: flex;
+    flex-grow: 3;
+    flex-flow: row-reverse wrap;
+}
+
+.site-menu-element {
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px;
+}
+
+.acitve-color {
+    color: #71bc42;
+}
+
+.site-menu-element:hover {
+    color: black;
+}
+
+.green-button {
+    background-color: #71bc42;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.green-button:hover {
+    background-color: #4e8d27;
+}
+
+.home-picture {
+    background-image: url("source/hero_2.jpg");
+    background-color: lightgrey;
+    background-blend-mode: multiply;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-picture-overlay-text {
+    margin: 10px;
+    padding: 10px;    
+    max-width: 50%;
+    background-color: unset;
+}
+
+.overlay-text {
+    background-color: unset;
+    font-size: 4rem;
+    font-family: oswald,arial,sans-serif;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.home-picture-overlay-arrow {
+    margin: 15px;
+    padding: 16px 17px;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.7);
+    background-blend-mode: multiply;
+    border-radius: 1px;
+}
+
+.home-picture-overlay-arrow:hover {
+    background-color: black;
+}
+
+.site-section {
+    padding: 7rem 0;
+}
+
+.center-text-with-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.light-text-letter-spacing {
+    font-family: oswald,arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.element-heading {
+    color: black;
+    font-family: oswald,arial,sans-serif;
+    font-size: 1.9rem;
+    margin: 10px 0;
+}
+
+.text-line, .simple-text-line {
+    background-color: #71bc42;
+    height: 2.5px;
+    width: 40px;
+}
+
+.text-line {
+    margin: 10px 0 3rem 0;
+}
+
+.simple-text-line {
+    margin: 10px 0 10px 0;
+}
+
+.small-card-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 40px;
+}
+
+.small-card {
+    border-right: 1px solid #dee2e6;
+    max-width: 25%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.small-card:last-child {
+    border-right: none;
+}
+
+.card-icon {
+    color: #71bc42;
+    font-size: 3.5rem;
+}
+
+.card-heading {
+    color: black;
+    font-family: oswald,arial,sans-serif;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.site-section-1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.half-screen-image-1, .half-screen-image-2 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: initial;
+    width: 50%;
+}
+
+.half-screen-image-1 {
+    background-image: url("source/img_4.jpg");
+}
+
+.half-screen-image-2 {
+    background-image: url("source/img_5.jpg");
+}
+
+.half-screen-block {
+    max-width: 50%;
+}
+
+.half-screen-text-1 {
+    margin: 3rem 2.5rem 3rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.half-screen-text-2 {
+    margin: 3rem 6rem 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.simple-text {
+    margin-bottom: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 31.5%;
+    z-index: 1;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px 0 rgba(162, 172, 184, 0.692);
+}
+
+.card-image {
+    display: block;
+}
+
+.card-text-container {
+    padding: 30px;
+}
+
+.card-heading-secondary {
+    color: black;
+    font-size: 1.2rem;
+    font-family: oswald,arial,sans-serif;
+    margin-bottom: 5px;
+}
+
+.arrow-container, .review-arrow-container {
+    background-color: unset;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.arrow-container {
+    top: -14rem;
+}
+
+.review-arrow-container {
+    top: -6rem;
+}
+
+.overlay-arrow {
+    padding: 16px 17px;
+    font-size: 1.1rem;
+    color: black;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 1px;
+}
+
+.overlay-arrow:hover {
+    background-color: #71bc42;
+    color: white;
+}
+
+.dot-container {
+    text-align: center;
+}
+
+.dot {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 7px;
+    margin: 2px;
+    width: 7px;
+}
+
+.dot:first-child {
+    background-color: #71bc42;
+}
+
+.half-screen-text-3 {
+    margin: 0 2.5rem 0 6.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.counter-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.counter-text {
+    letter-spacing: 0.2em;
+}
+
+.counter-number {
+    font-family: "Oswald", arial, sans-serif;
+    font-size: 4rem;
+    color: #71bc42;
+    padding: 40px 0;
+}
+
+.review-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5.5rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.person-image {
+    display: block;
+    border-radius: 50%;
+    max-width: 7%;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.review-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 2rem;
+    line-height: 3rem;
+}
+
+.color-link {
+    color: #71bc42;
+    cursor: pointer;
+}
+
+.color-link:hover {
+    color: #417223;
+}
+
+.above-footer-section, .above-footer-text, .above-footer-button {
+    background-color: #71bc42;
+    color: white;
+    font-family: "Oswald", arial, sans-serif;
+    text-align: center;
+}
+
+.above-footer-section {
+    padding: 3rem;
+}
+
+.above-footer-text {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.above-footer-button {
+    display: inline-block;
+    border: solid 2px white;
+    padding: 10px 30px;
+}
+
+.above-footer-button:hover {
+    background-color: white;
+    color: #71bc42;
+    cursor: pointer;
+}
+
+.site-footer, .copyright, .footer-columns, .footer-column, .column-header, .column-content, .container-1 {
+    background-color: #343a40;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
+}
+
+.site-footer {
+    height: 77vh;
+    padding: 3.5rem 3rem;
+}
+
+.site-footer > p {
+    text-align: center;
+}
+
+.fa-heart {
+    background-color: #343a40;
+    color: red;
+}
+
+.footer-link {
+    background-color: #343a40;
+    color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0.5rem 0;
+}
+
+.footer-link:hover {
+    color: rgba(255, 255, 255, 0.8);;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7rem;
+}
+
+.footer-columns > #first {
+    max-width: 30%;
+}
+
+.column-header {
+    color: white;
+    font-family: "Oswald", arial, sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.column-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.container {
+    background-color: inherit;
+    margin-left: 6rem;
+    min-width: 40%;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.footer-form {
+    background-color: inherit;
+    display: flex;
+    justify-content: stretch;
+    margin-bottom: 2rem;
+}
+
+.input-box {
+    background-color: inherit;
+    border: solid 1px white;
+    color: white;
+    flex-grow: 3;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.input-box:focus {
+    border-color: #71bc42;
+    outline: none;
+}
+
+.submit-button {
+    font-size: 1rem;
+    outline: none;
+}
+
+.submit-button:focus {
+    border: groove 1px #84d353;
+}
