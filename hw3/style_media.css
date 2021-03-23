@@ -1,0 +1,78 @@
+@media only screen
+    and (min-width: 576px)
+    and (max-width: 768px) {
+        .site-menu-element {
+            background-color:  rgba(0,0,0,0.2);
+        }
+        
+        .home-picture {
+            width: 100%;
+        }
+        
+        .velcome-block {
+            width: 100%;
+        }
+
+        .medium-block {
+            width: 100%;
+        }
+
+        .small-block {
+            width: 50%;
+        }
+
+        .experience-image {
+            height: 30vh;
+        }
+
+        .education-image {
+            height: 30vh;
+        }
+    }
+
+@media only screen
+    and (max-width: 576px) {
+        .site-menu-element {
+            background-color:  rgba(0,0,0,0.2);
+        }
+        
+        .home-picture {
+            width: 100%;
+        }
+        
+        .site-navigation {
+            flex-wrap: wrap;
+        }
+
+        .site-menu {
+            justify-content: center;
+        }
+
+        .velcome-block {
+            width: 100%;
+        }
+
+        .medium-block {
+            width: 100%;
+        }
+
+        .small-block {
+            width: 100%;
+        }
+
+        .about-image {
+            height: 30vh;
+        }
+
+        .experience-image {
+            height: 40vh;
+        }
+
+        .education-image {
+            height: 40vh;
+        }
+
+        .contact-image {
+            height: 40vh;
+        }
+    }
