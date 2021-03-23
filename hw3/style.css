@@ -1,0 +1,350 @@
+* {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    line-height: 2rem;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url(./fonts/fontawesome-webfont.eot?) format("eot"),
+         url(./fonts/fontawesome-webfont.svg) format("svg"),
+         url(./fonts/fontawesome-webfont.ttf) format("truetype"),
+         url(./fonts/fontawesome-webfont.woff) format("woff"),
+         url(./fonts/fontawesome-webfont.woff2) format("woff2"),
+         url(./fonts/FontAwesome.otf) format("otf");
+}
+
+b {
+    font-weight: 500;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: unset;
+}
+
+.fa {
+    font-family: "FontAwesome", Arial, sans-serif;
+    font-style: normal;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.site {
+    margin: 0 auto;
+    position: relative;
+}
+
+.site-header {
+    background-color: unset;
+    position: absolute;
+    margin: 5px 5%;
+    width: 90%;
+    z-index: 10;
+}
+
+.site-navigation {
+    align-items: baseline;
+    display: flex;
+}
+
+.site-logo {
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 10px;
+    text-shadow: 1px 1px 1px white;
+}
+
+.site-menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-grow: 10;
+}
+
+.site-menu-element {
+    color: rgba(0,0,0,0.4);
+    font-weight: 400;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+}
+
+.active-color {
+    color: #db9f30;
+    padding-bottom: 20px;
+}
+
+.site-menu-element:hover {
+    color: black;
+}
+
+.site-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-picture {
+    background-image: url(./images/home-img.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95vh;
+    width: 50%;
+}
+
+.velcome-block {
+    background-color: rgb(247, 225, 225);
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.section-block {
+    padding:  30px 2vw;
+}
+
+.velcome-text {
+    color: rgba(0,0,0,0.3);
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.simple-text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.3rem;
+}
+
+.dark-text {
+    color: rgba(0,0,0,0.4);
+}
+
+.light-text {
+    color: white;
+}
+
+.start-button {
+    background-color: unset;
+    border-radius: 20px/50%;
+    border: black solid 2px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin: 30px 0;
+}
+
+.start-button:hover {
+    background-color: black;
+    color: rgb(247, 225, 225);
+}
+
+.medium-block {
+    width: 50%;
+}
+
+.small-block {
+    width: 25%;
+}
+
+.about-image {
+    background-image: url(./images/about-img.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+.active {
+    background-color: #db9f30;
+    color: white;
+}
+
+.bright {
+    background-color: rgb(248, 113, 64);
+    color: white;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.list-container {
+    display: flex;
+    width: 100%;
+}
+
+.percent-text {
+    color: black;
+    font-weight: 600;
+    border-bottom: black solid 2px;
+}
+
+.percent-number {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    font-weight: 600;
+    border-bottom: white solid 2px;
+}
+
+#first-line-text {
+    width: 90%
+}
+
+#first-line-number {
+    width: 10%;
+}
+
+#second-line-text {
+    width: 70%;
+}
+
+#second-line-number {
+    width: 30%;
+}
+
+#third-line-text {
+    width: 80%;
+}
+
+#third-line-number {
+    width: 20%;
+}
+
+#center {
+    text-align: center;
+}
+
+.secondary-title {
+    font-size: 1.2rem;
+    margin: 20px 0 10px 0;
+}
+
+.medium-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.experience-image {
+    background-image: url(./images/experience-img.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.date {
+    color: black;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.list-icon {
+    margin: 15px;
+    margin-left: 0;
+}
+
+.education-image {
+    background-image: url(./images/education-img.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.section-quotes {
+    align-items: center;
+    background-image: url(./images/quotes-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 25%;
+    background-size: cover;
+    background-color: rgba(0,0,0,0.6);
+    background-blend-mode: multiply;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 7% 20vw;
+    flex-direction: column;
+}
+
+.quotes-text {
+    color: rgba(148, 148, 148, 0.7);
+}
+
+.site-form {
+    margin-top: 20px;
+}
+
+.form-input {
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid #db9f30;
+    color: white;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.form-input::placeholder {
+    color: white;
+}
+
+.form-input:focus {
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-button {
+    background-color: white;
+    border-radius: 20px/50%;
+    border: white solid 2px;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 50%;
+}
+
+.form-button:hover {
+    background-color: inherit;
+    color: white;
+}
+
+.contact-image {
+    background-image: url(./images/contact-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.site-footer {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 7% 20vw;
+    flex-direction: column;
+}
+
+.footer-icons {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+}
