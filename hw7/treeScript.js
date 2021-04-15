@@ -102,7 +102,8 @@ const flatList = [{"id":"c24cf51e-7c6c-47d8-a56f-8d11fc7765e7","parent_id":null}
                   {"id":"894c0544-991f-4508-ab71-d0959ae1aa53","parent_id":"a6264be8-1e6f-4866-8664-e009423e97b2"},
                   {"id":"fa145b9d-1a14-4aa7-ac6f-9e148fa39f74","parent_id":"894c0544-991f-4508-ab71-d0959ae1aa53"},
                   {"id":"5ce7fedf-cd6c-499a-b688-d2d98ca96b04","parent_id":"fa145b9d-1a14-4aa7-ac6f-9e148fa39f74"},
-                  {"id":"6a58786f-f87a-4979-8bec-d81d048cefd6","parent_id":"fa145b9d-1a14-4aa7-ac6f-9e148fa39f74"}];
+                  {"id":"6a58786f-f87a-4979-8bec-d81d048cefd6","parent_id":"fa145b9d-1a14-4aa7-ac6f-9e148fa39f74"},
+                  {"id":"a","parent_id":"20e45884-c44a-4c16-8524-724242eb4dd6"},];
 const rootId = 'c24cf51e-7c6c-47d8-a56f-8d11fc7765e7';
 
 class Tree {
@@ -141,6 +142,9 @@ class Tree {
                     return children[i];
                 } else {
                     currentChild = getChildById(children[i].children);
+                    if (Object.keys(currentChild).length > 0) {
+                        return currentChild;
+                    }
                 }
             }     
             return currentChild;
@@ -170,8 +174,7 @@ class Tree {
                 parentId,
             };
             let parentNode = this.getNodeById(parentId);
-            parentNode.children.push(Object.assign(newNode, nodeProperties));
-      
+            parentNode.children.push(Object.assign(newNode, nodeProperties));     
         } else {
             throw console.error('This node alredy exists.');
         }
@@ -194,11 +197,47 @@ class Tree {
     getSiblings(id) {
         return this.getParent(id).children.filter(child => child.id !== id);
     }
+
+    getPathToItemById(id) {
+        let path = [];
+        let node = this.getNodeById(id);
+        if (Object.keys(node).length === 0) {
+            console.log('This node doesn\'t exist.');
+        } else {
+            path.push(node);
+            while(node.parent_id !== null) {
+                node = this.getParent(node.id);
+                path.push(node);
+            }
+        }
+        return path;
+    }
+
+    getMostNestedChildren(id) {
+        const getLeafs = (arr, counter, node) => {
+            if(node.children?.length > 0) {
+                counter++;
+                for(let i = 0; i < node.children.length; i++) {
+                    arr = getLeafs(arr, counter, node.children[i]);
+                }
+            } else {
+                arr.push({node, counter});
+            }
+            return arr;
+        };
+        let node = this.getNodeById(id);
+        if (Object.keys(node).length === 0) {
+            console.exception('This node doesn\'t exist.');
+        } else {
+            let array = getLeafs([], 0, node);
+            return array.reduce((a, cur) => cur.counter > a.counter ? cur : a).node;
+        }
+    }
 }
 
 const tree = new Tree(flatList, rootId);
 console.log(tree.state);
-console.log(tree.getNodeById("3d537081-374e-47f0-aeb8-a9ba9cfe1eb0"));
+console.log(tree.getNodeById("44573a2d-724d-4f6d-8e71-02d1f40437a4"));
 tree.updateNodeById("3d537081-374e-47f0-aeb8-a9ba9cfe1eb0", {field: "string"});
 console.log(tree.getNodeById("3d537081-374e-47f0-aeb8-a9ba9cfe1eb0"));
 tree.createNode("newId", "3d537081-374e-47f0-aeb8-a9ba9cfe1eb0", {});
@@ -207,3 +246,5 @@ tree.deleteNodeById("6a58786f-f87a-4979-8bec-d81d048cefd6");
 console.log(tree.getNodeById("6a58786f-f87a-4979-8bec-d81d048cefd6"));
 console.log(tree.getParent("3d537081-374e-47f0-aeb8-a9ba9cfe1eb0"));
 console.log(tree.getSiblings("3d537081-374e-47f0-aeb8-a9ba9cfe1eb0"));
+console.log(tree.getPathToItemById("203daf8f-d81d-4646-babb-d8cc19b6afd0"));
+console.log(tree.getMostNestedChildren("44573a2d-724d-4f6d-8e71-02d1f40437a4"));
