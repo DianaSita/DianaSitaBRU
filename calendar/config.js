@@ -96,3 +96,5 @@ export const HOLIDAYS = [
         day: 25
     }
 ]
+
+export const ISPREVANDNEXTDATESHOW = true;

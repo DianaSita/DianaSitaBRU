@@ -26,11 +26,11 @@ export function create() {
 }
 
 export function getDisplayedYear() {
-    return document.getElementById("head-year").textContent;
+    return document.getElementById("head-year").value;
 }
 
 export function getDisplayedMonth() {
-    return MONTHS.indexOf(document.getElementById("head-month").textContent);
+    return document.getElementById("head-month").selectedIndex;
 }
 
 export function insertDay(day) {
@@ -42,8 +42,7 @@ export function insertDay(day) {
         margin: 1.5vmin 1vmin;
         font-weight: 700;
         color: rgb(214, 114, 114);
-        border-radius: 50%;
-        border: rgb(40, 40, 40) solid 2px;
+        border: inherit solid 2px;
         align-items: center;
         grid-column-start: ${day.i};
         grid-row-start: ${day.j};
@@ -52,6 +51,7 @@ export function insertDay(day) {
     if (day.isToday) {
         calendarDay.style.backgroundColor = "rgb(207, 13, 13)";
         calendarDay.style.color = "rgb(40, 40, 40)";
+        calendarDay.style.borderRadius = "50%";
         return calendarDay;
     } else if (day.isWeekend) {
         calendarDay.style.color = "rgb(207, 13, 13)";
@@ -59,15 +59,19 @@ export function insertDay(day) {
     if (day.isHoliday) {
         calendarDay.style.color = "white";
         calendarDay.style.fontWeight = "800";
-    }  
+    } 
+    if(day.isPrevOrNext) {
+        calendarDay.style.filter = "brightness(50%)";
+    }
     calendarDay.onclick = (evt) => {
         let selected = document.querySelectorAll("[selected]");
         selected.forEach(element => { 
             element.removeAttribute("selected");
-            element.style.border = "rgb(40, 40, 40) solid 2px";
+            element.style.border = "hidden";
         });
         evt.currentTarget.setAttribute("selected", "true");
         evt.currentTarget.style.border = "rgb(207, 13, 13) solid 2px";
+        evt.currentTarget.style.borderRadius = "50%";
     };
     return calendarDay;
 }
@@ -75,12 +79,12 @@ export function insertDay(day) {
 function createHead() {
     let date = new Date();
     let head = document.createElement("div");
-    let year = createHeadElement();
+    let year = createHeadInput();
     year.id = "head-year";
-    year.textContent = date.getFullYear();
-    let month = createHeadElement();
+    year.value = date.getFullYear();
+    let month = createHeadSelect(MONTHS);
     month.id = "head-month";
-    month.textContent = MONTHS[date.getMonth()];
+    month.selectedIndex = date.getMonth();
     head.id = "calendar-head";
     head.style.cssText = `
         display: flex;
@@ -94,11 +98,38 @@ function createHead() {
     return head;
 }
 
-function createHeadElement() {
-    let element = document.createElement("div");
+function createHeadSelect(months) {
+    let element = document.createElement("select");
     element.style.cssText = `
         font-weight: 700;
         color: rgb(207, 13, 13);
+        padding: 1.5vmin 2vmin;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        background-color: inherit;
+        `;
+    months.forEach(el => {
+        let option = document.createElement("option");
+        option.text = el;
+        element.appendChild(option);
+    });
+    return element;
+}
+
+function createHeadInput() {
+    let element = document.createElement("input");
+    element.type = "number";
+    element.style.cssText = `
+        font-weight: 700;
+        appearance: none;
+        color: rgb(207, 13, 13);
+        outline: none;
+        background-color: inherit;
+        padding: 1.5vmin;
+        border: none;
+        max-width: 20%;
+        text-align: right;
         `;
     return element;
 }
